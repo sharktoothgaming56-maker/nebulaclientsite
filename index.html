@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FiggySMP — Minecraft Community</title>
-<meta name="description" content="FiggySMP is a Minecraft community and the home of NebulaClient, a feature-rich Minecraft launcher.">
+<title>NebulaClient — Minecraft Launcher</title>
+<meta name="description" content="NebulaClient is a feature-rich Minecraft launcher with custom HUDs, 3D waypoints, AFK sessions, and a stunning space theme.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931973085541540" crossorigin="anonymous"></script>
 <style>
 :root{--void:#08050f;--space:#120e24;--card:rgba(26,21,48,0.7);--nebula:#9d6bff;--nebula-bright:#b98bff;--text:#eae6f7;--dim:#a79fc4;--faint:#6f6690;--border:rgba(157,107,255,0.18);}
@@ -14,7 +14,6 @@ body{background:var(--void);color:var(--text);font-family:'Segoe UI',system-ui,s
 #stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(8,5,15,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
 .nav-logo{font-size:1.1rem;font-weight:800;letter-spacing:.5px;color:var(--nebula-bright);text-decoration:none;}
-.nav-logo span{color:var(--dim);font-weight:400;}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{color:var(--dim);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .15s;}
 .nav-links a:hover{color:var(--text);}
@@ -23,11 +22,15 @@ section{position:relative;z-index:1;}
 .hero-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--nebula);margin-bottom:20px;}
 .hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;background:linear-gradient(135deg,#fff 30%,var(--nebula-bright));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px;}
 .hero p{font-size:1.15rem;color:var(--dim);max-width:540px;line-height:1.65;margin-bottom:40px;}
-.btn-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center;}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:12px;font-size:.95rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:transform .12s,filter .12s;}
 .btn:hover{transform:translateY(-2px);filter:brightness(1.1);}
 .btn-primary{background:linear-gradient(135deg,var(--nebula),#c261d8);color:#fff;box-shadow:0 4px 24px rgba(157,107,255,.4);}
 .btn-secondary{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border);}
+.btn-disabled{background:rgba(255,255,255,.04);color:var(--faint);border:1px solid rgba(255,255,255,.08);cursor:not-allowed;filter:none!important;transform:none!important;position:relative;}
+.dev-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(157,107,255,.15);border:1px solid rgba(157,107,255,.3);color:var(--nebula-bright);border-radius:20px;padding:5px 14px;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+.dev-dot{width:7px;height:7px;border-radius:50%;background:var(--nebula);box-shadow:0 0 8px var(--nebula);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
 .orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);}
 .orb-1{width:500px;height:500px;background:rgba(157,107,255,.12);top:10%;left:50%;transform:translateX(-50%);}
 .orb-2{width:300px;height:300px;background:rgba(194,97,216,.08);bottom:15%;right:10%;}
@@ -57,9 +60,9 @@ footer a{color:var(--nebula);text-decoration:none;}
 <body>
 <canvas id="stars"></canvas>
 <nav>
-  <a class="nav-logo" href="#home">Figgy<span>SMP</span></a>
+  <a class="nav-logo" href="#home">NebulaClient</a>
   <ul class="nav-links">
-    <li><a href="#features">NebulaClient</a></li>
+    <li><a href="#features">Features</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -68,17 +71,18 @@ footer a{color:var(--nebula);text-decoration:none;}
 <section class="hero" id="home">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
-  <p class="hero-eyebrow">Minecraft · Community · Client</p>
+  <p class="hero-eyebrow">Minecraft Launcher</p>
   <h1>Beyond<br>the Stars</h1>
-  <p>FiggySMP is a Minecraft community and the home of NebulaClient — a feature-rich launcher with custom HUDs, waypoints, AFK sessions, and more.</p>
+  <p>NebulaClient is a feature-rich Minecraft launcher with custom HUDs, 3D waypoints, AFK sessions, keybind presets, and a stunning space theme — built for players who want more.</p>
   <div class="btn-row">
-    <a class="btn btn-primary" href="#features">Explore NebulaClient</a>
-    <a class="btn btn-secondary" href="#contact">Get in touch</a>
+    <span class="dev-badge"><span class="dev-dot"></span>In Development</span>
+    <button class="btn btn-disabled" onclick="return false;">⬇ Download — Coming Soon</button>
+    <a class="btn btn-secondary" href="#features">See Features</a>
   </div>
 </section>
 
 <section class="features" id="features">
-  <p class="section-label">NebulaClient</p>
+  <p class="section-label">Features</p>
   <h2 class="section-title">Everything a Minecraft<br>player actually needs</h2>
   <div class="feature-grid">
     <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Armor &amp; Status HUDs</h3><p>Vertical armor stack with live durability, held item counts, and flying/sneaking/sprinting status — all draggable and resizable.</p></div>
@@ -93,17 +97,17 @@ footer a{color:var(--nebula);text-decoration:none;}
 <section class="about" id="about">
   <div class="about-inner">
     <p class="section-label">About</p>
-    <h2 class="section-title" style="margin-bottom:32px;">Who we are</h2>
-    <p>FiggySMP started as a small Minecraft server and grew into a full community around competitive and casual play. NebulaClient is our custom Minecraft launcher — built to give players the tools Lunar and Feather offer, without the bloat.</p>
-    <p>Everything in NebulaClient is built in-house: the launcher, the in-game mod, the HUD editor, the waypoint system. We build features players actually ask for, ship them fast, and keep the whole thing free.</p>
-    <p>The project is actively developed and updated regularly. If you run into bugs or have ideas, reach out — we read everything.</p>
+    <h2 class="section-title" style="margin-bottom:32px;">What is NebulaClient?</h2>
+    <p>NebulaClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house — the launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
+    <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is actively developed and updated regularly.</p>
+    <p>NebulaClient is currently in active development. A public release is coming soon — follow along or reach out below if you want to be notified when it drops.</p>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <p class="section-label" style="text-align:center;">Contact</p>
   <h2 class="section-title">Get in touch</h2>
-  <p>Have a question, a bug report, or want to talk about NebulaClient? Reach out through any of the channels below.</p>
+  <p>Have a question or want to know when NebulaClient launches? Reach out below.</p>
   <div class="contact-links">
     <a class="contact-link" href="mailto:contact@figgysmp.shop">✉️ contact@figgysmp.shop</a>
     <a class="contact-link" href="https://discord.gg/figgysmp" target="_blank" rel="noopener">💬 Join our Discord</a>
@@ -111,7 +115,7 @@ footer a{color:var(--nebula);text-decoration:none;}
 </section>
 
 <footer>
-  <p>© 2026 FiggySMP · <a href="#home">Back to top</a></p>
+  <p>© 2026 NebulaClient · <a href="#home">Back to top</a></p>
 </footer>
 
 <script>
