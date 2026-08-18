@@ -100,6 +100,11 @@ public final class SolarBadges {
         return role.equals(r);
     }
 
+    public static void forceRefresh() {
+        lastQuery = 0L;
+        maybeRefresh();
+    }
+
     /**
      * Ask the launcher for the roles of everyone currently on the tab list,
      * at most once every QUERY_INTERVAL_MS. Cheap to call every frame; it

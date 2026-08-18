@@ -58,14 +58,18 @@ public final class SolarCommand {
             if (client.getNetworkHandler() == null) return builder.buildFuture();
             
             String input = builder.getRemaining().toLowerCase(java.util.Locale.ROOT);
-            for (PlayerListEntry entry : client.getNetworkHandler().getPlayerList()) {
-                String name = entry.getProfile().getName();
-                if (name.toLowerCase(java.util.Locale.ROOT).startsWith(input)) {
-                    if ("remove".equals(op)) {
+            if ("remove".equals(op)) {
+                for (PlayerListEntry entry : client.getNetworkHandler().getPlayerList()) {
+                    String name = entry.getProfile().getName();
+                    if (name.toLowerCase(java.util.Locale.ROOT).startsWith(input)) {
                         if (com.solarclient.mod.client.social.SolarBadges.hasRole(entry.getProfile().getId(), role)) {
                             builder.suggest(name);
                         }
-                    } else {
+                    }
+                }
+            } else {
+                for (String name : ctx.getSource().getPlayerNames()) {
+                    if (name.toLowerCase(java.util.Locale.ROOT).startsWith(input)) {
                         builder.suggest(name);
                     }
                 }
@@ -87,7 +91,10 @@ public final class SolarCommand {
         payload.addProperty("raw", role + " " + op + " " + username);
         // Result comes back off-thread; hop to the client thread for chat.
         SolarLink.get().actionForResult("solarclient:command", payload, message -> {
-            MinecraftClient.getInstance().execute(() -> feedback(message, Formatting.WHITE));
+            MinecraftClient.getInstance().execute(() -> {
+                feedback(message, Formatting.WHITE);
+                com.solarclient.mod.client.social.SolarBadges.forceRefresh();
+            });
         });
     }
 
