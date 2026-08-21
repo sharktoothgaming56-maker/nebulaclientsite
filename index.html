@@ -818,11 +818,6 @@
         <a href="https://www.virustotal.com/gui/file/90f70410f48893b88dc70057d0c856d29e0c404f5ad05d09ea9a74e400fef3dc?nocache=1" target="_blank" class="btn-scan vt-link">
           Look up on VirusTotal →
         </a>
-        <a href="#" class="btn-discord" aria-label="Join Discord" style="margin-left:12px;">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="22" height="22">
-            <path d="M22 24c..."/><!-- Discord SVG placeholder -->
-          </svg>
-        </a>
       </div>
 
       <!-- Hash -->
@@ -903,7 +898,7 @@
     <section class="section" id="install">
       <h2 class="section-title">First Time Setup on Windows</h2>
       <p style="text-align:center; color:var(--text-secondary); max-width:620px; margin:-18px auto 32px; font-size:0.92rem;">
-        Since this build isn’t code‑signed yet, SmartScreen will flag it the first time you run it — this is normal for a small indie project without a signing certificate and doesn’t indicate any problem. Verify the hash above before continuing if you want to be sure.
+        Since this build isn’t code‑signed yet, SmartScreen will flag it the first time you run it  this is normal for a small indie project without a signing certificate and doesn’t indicate any problem. Verify the hash above before continuing if you want to be sure.
       </p>
 
       <div class="install-box">
@@ -952,9 +947,9 @@
     <section class="section" id="about">
       <h2 class="section-title">What is SolarClient?</h2>
       <div class="about-text">
-        <p>SolarClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house — the launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
-        <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is <strong>actively developed and updated regularly</strong> — the download above is a real, working build, not a placeholder.</p>
-        <p>Got feedback or found a bug? Reach out below — we read everything.</p>
+        <p>SolarClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house  the launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
+        <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is <strong>actively developed and updated regularly</strong>  the download above is a real, working build, not a placeholder.</p>
+        <p>Got feedback or found a bug? Reach out below  we read everything.</p>
       </div>
     </section>
 
@@ -981,7 +976,7 @@
             <span class="faq-arrow">▼</span>
           </div>
           <div class="faq-body">
-            The installer’s SHA‑256 hash is published above so you can verify it against the downloaded file and view the live VirusTotal report. Because the build isn’t code‑signed, Windows SmartScreen shows a warning the first time you run it — see the setup steps below.
+            The installer’s SHA‑256 hash is published above so you can verify it against the downloaded file and view the live VirusTotal report. Because the build isn’t code‑signed, Windows SmartScreen shows a warning the first time you run it  see the setup steps below.
           </div>
         </div>
 
@@ -1171,7 +1166,7 @@
     }
 
     // ---- Live version + download, straight from GitHub Releases ----
-    // Keeps this page in sync with whatever you last released — the version
+    // Keeps this page in sync with whatever you last released  the version
     // number, the download link, the file size, the SHA-256, and the
     // VirusTotal lookup all update themselves from the newest release. You
     // never hand-edit this page when you ship a new build.
@@ -1218,7 +1213,7 @@
           document.querySelectorAll('.vt-link').forEach(a => { a.href = vtUrl; });
         }
       } catch (_) {
-        // Offline or rate-limited — fallbacks in the HTML stay as-is.
+        // Offline or rate-limited  fallbacks in the HTML stay as-is.
       }
     }
     loadLatestRelease();
