@@ -782,7 +782,7 @@
         <!-- Href is upgraded to the newest release's direct .exe URL by the
              loadLatestRelease() script below. The fallback here points at the
              GitHub "latest release" page, which always resolves to the newest
-             version so the button works even if that script/API fails. -->
+             version — so the button works even if that script/API fails. -->
         <a href="https://github.com/sharktoothgaming56-maker/solarclientsite/releases/latest" class="btn-main" id="primaryDownloadBtn" onclick="showDownloadToast()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -793,7 +793,7 @@
         </a>
 
         <div class="meta-details">
-          <span>Windows 10 / 11 64 bit</span>
+          <span>Windows 10 / 11 64-bit</span>
           <span>•</span>
           <span id="dlSize">Size: 93.3 MB</span>
           <span>•</span>
@@ -908,7 +908,7 @@
           <div class="mock-body">
             Microsoft Defender SmartScreen prevented an unrecognized app from starting.
             <br><br>
-            <strong>App:</strong> SolarClientSetup<span id="mockVersion">3.20.34</span>.exe
+            <strong>App:</strong> SolarClientSetup<span id="mockVersion">3.20.35</span>.exe
           </div>
           <div class="mock-actions">
             <div class="btn-mock-info">1. Click More info</div>
@@ -1015,17 +1015,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-      </div>
-      <p>Not affiliated with Mojang or Microsoft.</p>
+    <footer>
+      <p>© 2026 SolarClient · <a href="#">Back to top</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · Not affiliated with Mojang Studios or Microsoft.</p>
     </footer>
 
   </div><!-- /.container -->
 
-    <div class="right-rail">
     <!-- Right Sidebar Ad (Ad 2) -->
     <aside class="ad-sidebar" aria-label="Advertisement">
       <div class="ad-sidebar-label">Sponsored</div>
@@ -1035,11 +1030,8 @@
            data-ad-slot="4916563529"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </aside>
-  </div><!-- right rail -->
 
   </div><!-- /.page-layout -->
 
@@ -1190,8 +1182,6 @@
         if (version) {
           const tag = document.getElementById('versionTag');
           if (tag) tag.textContent = `Version ${version} Released`;
-          const mockVer = document.getElementById('mockVersion');
-          if (mockVer) mockVer.textContent = version;
         }
 
         const exe = (data.assets || []).find(a => /\.exe$/i.test(a.name));
