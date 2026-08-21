@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- Updated on 2026-08-21T16:05:13Z -->
 <html lang="en">
 <head>
@@ -760,7 +760,7 @@
         <a href="#contact" class="nav-link">Contact</a>
         <a href="privacy.html" class="nav-link">Privacy</a>
         <a href="https://www.virustotal.com/gui/file/90f70410f48893b88dc70057d0c856d29e0c404f5ad05d09ea9a74e400fef3dc?nocache=1" target="_blank" class="clean-badge vt-link">
-          <span>✓ Look up on VirusTotal</span>
+          <span>âœ“ Look up on VirusTotal</span>
         </a>
       </div>
     </header>
@@ -795,9 +795,9 @@
 
         <div class="meta-details">
           <span>Windows 10 / 11 64 bit</span>
-          <span>•</span>
+          <span>â€¢</span>
           <span id="dlSize">Size: 93.3 MB</span>
-          <span>•</span>
+          <span>â€¢</span>
           <span>Installer (.exe)</span>
         </div>
       </div>
@@ -818,7 +818,7 @@
         </div>
 
         <a href="https://www.virustotal.com/gui/file/90f70410f48893b88dc70057d0c856d29e0c404f5ad05d09ea9a74e400fef3dc?nocache=1" target="_blank" class="btn-scan vt-link">
-          Look up on VirusTotal →
+          Look up on VirusTotal â†’
         </a>
       </div>
 
@@ -900,7 +900,7 @@
     <section class="section" id="install">
       <h2 class="section-title">First Time Setup on Windows</h2>
       <p style="text-align:center; color:var(--text-secondary); max-width:620px; margin:-18px auto 32px; font-size:0.92rem;">
-        This build isn't code-signed yet, so SmartScreen will flag it the first run — that's normal for a small indie project without a signing certificate, not a sign of anything wrong. Verify the hash above before continuing if you want to be sure.
+        This build isn't code-signed yet, so SmartScreen will flag it the first run â€” that's normal for a small indie project without a signing certificate, not a sign of anything wrong. Verify the hash above before continuing if you want to be sure.
       </p>
 
       <div class="install-box">
@@ -949,9 +949,9 @@
     <section class="section" id="about">
       <h2 class="section-title">What is SolarClient?</h2>
       <div class="about-text">
-        <p>SolarClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house — the launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
-        <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is <strong>actively developed and updated regularly</strong> — the download above is a real, working build, not a placeholder.</p>
-        <p>Got feedback or found a bug? Reach out below — we read everything.</p>
+        <p>SolarClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house the launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
+        <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is <strong>actively developed and updated regularly</strong> â€” the download above is a real, working build, not a placeholder.</p>
+        <p>Got feedback or found a bug? Reach out below â€” we read everything.</p>
       </div>
     </section>
 
@@ -975,17 +975,17 @@
         <div class="faq-block">
           <div class="faq-trigger" onclick="toggleFaq(this)">
             <span>Is SolarClient safe?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-arrow">â¼</span>
           </div>
           <div class="faq-body">
-            The installer's SHA-256 hash is published above so you can verify it against the file you actually downloaded, and check the live VirusTotal report yourself. It isn't code-signed yet, which is why Windows SmartScreen shows a warning the first time you run it — see the setup steps below.
+            The installer's SHA-256 hash is published above so you can verify it against the file you actually downloaded, and check the live VirusTotal report yourself. It isn't code-signed yet, which is why Windows SmartScreen shows a warning the first time you run it â€” see the setup steps below.
           </div>
         </div>
 
         <div class="faq-block">
           <div class="faq-trigger" onclick="toggleFaq(this)">
             <span>Do I need to install Java?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-arrow">â¼</span>
           </div>
           <div class="faq-body">
             No. SolarClient downloads and runs the exact Java version required for each Minecraft version automatically.
@@ -995,7 +995,7 @@
         <div class="faq-block">
           <div class="faq-trigger" onclick="toggleFaq(this)">
             <span>Do I need a Minecraft account?</span>
-            <span class="faq-arrow">▼</span>
+            <span class="faq-arrow">â¼</span>
           </div>
           <div class="faq-body">
             Yes. You log in through your standard Microsoft account to join servers and play.
@@ -1010,7 +1010,7 @@
       <div class="contact-wrap">
         <p>Have a question, found a bug, or want to know what's coming next? Reach out below.</p>
         <div class="contact-links">
-          <a class="contact-link" href="https://discord.gg/DyeJ8tAvZY" target="_blank" rel="noopener">💬 Join our Discord</a>
+          <a class="contact-link" href="https://discord.gg/DyeJ8tAvZY" target="_blank" rel="noopener">ðŸ’¬ Join our Discord</a>
         </div>
       </div>
     </section>
@@ -1156,7 +1156,7 @@
     // The anchor's own href does the download natively; we just show a toast.
     function showDownloadToast() {
       const toast = document.getElementById('toast');
-      toast.innerText = 'Starting download…';
+      toast.innerText = 'Starting downloadâ€¦';
       toast.classList.add('visible');
       setTimeout(() => toast.classList.remove('visible'), 3500);
     }
@@ -1168,7 +1168,7 @@
     }
 
     // ---- Live version + download, straight from GitHub Releases ----
-    // Keeps this page in sync with whatever you last released — the version
+    // Keeps this page in sync with whatever you last released â€” the version
     // number, the download link, the file size, the SHA-256, and the
     // VirusTotal lookup all update themselves from the newest release. You
     // never hand-edit this page when you ship a new build.
@@ -1215,10 +1215,11 @@
           document.querySelectorAll('.vt-link').forEach(a => { a.href = vtUrl; });
         }
       } catch (_) {
-        // Offline or rate-limited — fallbacks in the HTML stay as-is.
+        // Offline or rate-limited â€” fallbacks in the HTML stay as-is.
       }
     }
     loadLatestRelease();
   </script>
 </body>
 </html>
+
