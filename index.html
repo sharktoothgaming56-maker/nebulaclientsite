@@ -82,12 +82,48 @@
       pointer-events: none;
     }
 
+    .page-layout {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    .ad-sidebar {
+      width: 160px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+      height: fit-content;
+    }
+
+    .ad-sidebar .ad-sidebar-label {
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 6px;
+      opacity: 0.6;
+    }
+
     .container {
       position: relative;
       z-index: 1;
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px 80px;
+      flex: 1;
+      min-width: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 1200px) {
+      .ad-sidebar { display: none; }
+      .page-layout { padding: 0 20px 80px; }
     }
 
     /* Navbar */
@@ -692,7 +728,21 @@
   <div class="ambient-glow-purple"></div>
   <div class="ambient-glow-bottom"></div>
 
-  <div class="container">
+  <div class="page-layout">
+
+    <!-- Left Sidebar Ad (Ad 1) -->
+    <aside class="ad-sidebar" aria-label="Advertisement">
+      <div class="ad-sidebar-label">Sponsored</div>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7931973085541540"
+           data-ad-slot="5583456558"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+    <div class="container">
 
     <!-- Navbar -->
     <header class="header-nav">
@@ -707,6 +757,7 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <a href="privacy.html" class="nav-link">Privacy</a>
         <a href="https://www.virustotal.com/gui/file/90f70410f48893b88dc70057d0c856d29e0c404f5ad05d09ea9a74e400fef3dc?nocache=1" target="_blank" class="clean-badge vt-link">
           <span>✓ Look up on VirusTotal</span>
         </a>
@@ -732,7 +783,7 @@
              loadLatestRelease() script below. The fallback here points at the
              GitHub "latest release" page, which always resolves to the newest
              version — so the button works even if that script/API fails. -->
-        <a href="https://github.com/sharktoothgaming56-maker/nebulaclientsite/releases/latest" class="btn-main" id="primaryDownloadBtn" onclick="showDownloadToast()">
+        <a href="https://github.com/sharktoothgaming56-maker/solarclientsite/releases/latest" class="btn-main" id="primaryDownloadBtn" onclick="showDownloadToast()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
@@ -832,12 +883,13 @@
       </div>
     </section>
 
-    <!-- Ad slot -->
-    <div class="ad-slot">
+    <!-- Inline Ad (Ad 1) -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <div class="ad-slot-label">Sponsored</div>
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-7931973085541540"
-           data-ad-slot="3768981893"
+           data-ad-slot="5583456558"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -902,12 +954,13 @@
       </div>
     </section>
 
-    <!-- Ad slot -->
-    <div class="ad-slot">
+    <!-- Inline Ad (Ad 2) -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <div class="ad-slot-label">Sponsored</div>
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-7931973085541540"
-           data-ad-slot="9292771311"
+           data-ad-slot="4916563529"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -964,10 +1017,24 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 SolarClient · <a href="#">Back to top</a> · Not affiliated with Mojang Studios or Microsoft.</p>
+      <p>© 2026 SolarClient · <a href="#">Back to top</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · Not affiliated with Mojang Studios or Microsoft.</p>
     </footer>
 
-  </div>
+  </div><!-- /.container -->
+
+    <!-- Right Sidebar Ad (Ad 2) -->
+    <aside class="ad-sidebar" aria-label="Advertisement">
+      <div class="ad-sidebar-label">Sponsored</div>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7931973085541540"
+           data-ad-slot="4916563529"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+
+  </div><!-- /.page-layout -->
 
   <!-- Toast -->
   <div id="toast" class="toast-msg">Copied to clipboard</div>
@@ -1102,7 +1169,7 @@
     // GitHub's 60-requests/hour unauthenticated limit is hit), the page keeps
     // the fallback values baked into the HTML and the button still points at
     // the "latest release" page, which always resolves to the newest build.
-    const RELEASES_REPO = 'sharktoothgaming56-maker/nebulaclientsite';
+    const RELEASES_REPO = 'sharktoothgaming56-maker/solarclientsite';
 
     async function loadLatestRelease() {
       try {
