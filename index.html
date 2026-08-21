@@ -782,7 +782,7 @@
         <!-- Href is upgraded to the newest release's direct .exe URL by the
              loadLatestRelease() script below. The fallback here points at the
              GitHub "latest release" page, which always resolves to the newest
-             version — so the button works even if that script/API fails. -->
+             version, so the button works even if that script/API fails. -->
         <a href="https://github.com/sharktoothgaming56-maker/solarclientsite/releases/latest" class="btn-main" id="primaryDownloadBtn" onclick="showDownloadToast()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -899,7 +899,7 @@
     <section class="section" id="install">
       <h2 class="section-title">First Time Setup on Windows</h2>
       <p style="text-align:center; color:var(--text-secondary); max-width:620px; margin:-18px auto 32px; font-size:0.92rem;">
-        This build isn't code-signed yet, so SmartScreen will flag it the first run — that's normal for a small indie project without a signing certificate, not a sign of anything wrong. Verify the hash above before continuing if you want to be sure.
+        This build isn't code-signed yet, so SmartScreen will flag it the first run, that's normal for a small indie project without a signing certificate, not a sign of anything wrong. Verify the hash above before continuing if you want to be sure.
       </p>
 
       <div class="install-box">
@@ -908,7 +908,7 @@
           <div class="mock-body">
             Microsoft Defender SmartScreen prevented an unrecognized app from starting.
             <br><br>
-            <strong>App:</strong> SolarClientSetup<span id="mockVersion">3.20.35</span>.exe
+            <strong>App:</strong> SolarClientSetup<span id="mockVersion">3.20.36</span>.exe
           </div>
           <div class="mock-actions">
             <div class="btn-mock-info">1. Click More info</div>
@@ -948,9 +948,9 @@
     <section class="section" id="about">
       <h2 class="section-title">What is SolarClient?</h2>
       <div class="about-text">
-        <p>SolarClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house — the launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
-        <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is <strong>actively developed and updated regularly</strong> — the download above is a real, working build, not a placeholder.</p>
-        <p>Got feedback or found a bug? Reach out below — we read everything.</p>
+        <p>SolarClient is a custom Minecraft launcher built to give players the tools that Lunar Client and Feather offer, without the bloat. Everything is built in-house. The launcher, the in-game mod, the HUD editor, and the waypoint system.</p>
+        <p>We build features players actually ask for, ship them fast, and keep the whole thing free. The project is <strong>actively developed and updated regularly</strong>. The download above is a real, working build, not a placeholder.</p>
+        <p>Got feedback or found a bug? Reach out below - we read everything.</p>
       </div>
     </section>
 
@@ -977,7 +977,7 @@
             <span class="faq-arrow">▼</span>
           </div>
           <div class="faq-body">
-            The installer's SHA-256 hash is published above so you can verify it against the file you actually downloaded, and check the live VirusTotal report yourself. It isn't code-signed yet, which is why Windows SmartScreen shows a warning the first time you run it — see the setup steps below.
+            The installer's SHA-256 hash is published above so you can verify it against the file you actually downloaded, and check the live VirusTotal report. It isn't code-signed yet, which is why Windows SmartScreen shows a warning the first time you run it. See the setup steps below.
           </div>
         </div>
 
@@ -1159,7 +1159,7 @@
     }
 
     // ---- Live version + download, straight from GitHub Releases ----
-    // Keeps this page in sync with whatever you last released — the version
+    // Keeps this page in sync with whatever you last released, the version
     // number, the download link, the file size, the SHA-256, and the
     // VirusTotal lookup all update themselves from the newest release. You
     // never hand-edit this page when you ship a new build.
