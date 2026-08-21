@@ -37,7 +37,7 @@
     "publish": {
       "provider": "github",
       "owner": "sharktoothgaming56-maker",
-      "repo": "solarclientsite",
+      "repo": "nebulaclientsite",
       "releaseType": "release"
     },
     "directories": {
